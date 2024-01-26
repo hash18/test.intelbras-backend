@@ -33,6 +33,21 @@ export class SegmentTypeService {
     return segmentType;
   }
 
+  async updateTimestamp(id: any): Promise<SegmentType> {
+    const component = await this.segmentTypeRepository.findOne({
+      where: { id },
+    });
+  
+    if (!component) {
+      throw new NotFoundException(`Component with id ${id} not found`);
+    }
+  
+    // Atualiza apenas o campo `updated_at`
+    component.deleted_at = new Date();
+  
+    return await this.segmentTypeRepository.save(component);
+  }
+
   async update(id: number, updateSegmentTypeDto: UpdateSegmentTypeDto): Promise<SegmentType> {
     await this.findOne(id); // Check if exists
     await this.segmentTypeRepository.update(id, updateSegmentTypeDto);

@@ -8,6 +8,7 @@
     "password": "",
     "database": "",
     "synchronize": false,
-    "entities": ["entities/*.js"]
+    "entities": ["entities/*.js"],
+    "softDelete": true
   }
 ]

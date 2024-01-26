@@ -7,7 +7,6 @@ import { join } from 'path';
 import { AuthModule } from './auth/auth.module';
 import { TokenModule } from './token/token.module';
 import { UserModule } from './user/user.module';
-import { ProjetosModule } from './projetos/projetos.module';
 import { ComponentModule } from './component/component.module';
 import { SegmentTypeModule } from './segment-type/segment-type.module';
 import { ComponentGroupModule } from './component-group/component-group.module';
@@ -32,7 +31,6 @@ import { ComponentGroupModule } from './component-group/component-group.module';
     AuthModule,
     TokenModule,
     UserModule,
-    ProjetosModule,
     ComponentModule,
     SegmentTypeModule,
     ComponentGroupModule,

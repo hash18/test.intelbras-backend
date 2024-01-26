@@ -2,6 +2,7 @@ import { Controller, Get, Post, Body, Patch, Param, Delete } from '@nestjs/commo
 import { ComponentGroupService } from './component-group.service';
 import { CreateComponentGroupDto } from '../dto/component-group/create-component-group.dto';
 import { UpdateComponentGroupDto } from '../dto/component-group/update-component-group.dto';
+import { ComponentGroup } from '../entities/ComponentGroup.entity';
 
 @Controller('component-group')
 export class ComponentGroupController {
@@ -30,5 +31,9 @@ export class ComponentGroupController {
   @Delete(':id')
   async remove(@Param('id') id: string) {
     return this.componentGroupService.remove(+id);
+  }
+  @Patch('soft-delete/:id')
+  async updateTimestamp(@Param('id') id: string): Promise<ComponentGroup> {
+    return this.componentGroupService.updateTimestamp(+id);
   }
 }

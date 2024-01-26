@@ -33,6 +33,20 @@ export class ComponentGroupService {
     return componentGroup;
   }
   
+  async updateTimestamp(id: any): Promise<ComponentGroup> {
+    const component = await this.componentGroupRepository.findOne({
+      where: { id },
+    });
+  
+    if (!component) {
+      throw new NotFoundException(`Component with id ${id} not found`);
+    }
+  
+    // Atualiza apenas o campo `updated_at`
+    component.deleted_at = new Date();
+  
+    return await this.componentGroupRepository.save(component);
+  }
 
   async update(id: number, updateComponentGroupDto: UpdateComponentGroupDto): Promise<ComponentGroup> {
     await this.findOne(id); // Check if the componentGroup exists

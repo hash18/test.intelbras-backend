@@ -1,5 +1,3 @@
-// component.module.ts
-
 import { Module } from '@nestjs/common';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { ComponentService } from './component.service';

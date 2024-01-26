@@ -1,4 +1,4 @@
-import { Injectable } from '@nestjs/common';
+import { Injectable, NotFoundException } from '@nestjs/common';
 import { CreateUserDto } from '../dto/user/create-user.dto';
 import { UpdateUserDto } from '../dto/user/update-user.dto';
 import { InjectRepository } from '@nestjs/typeorm';
@@ -49,6 +49,21 @@ export class UserService {
         .where('id = :id', { id: id })
         .execute();
     }
+  }
+
+  async updateTimestamp(id: any): Promise<User> {
+    const component = await this.userRepository.findOne({
+      where: { id },
+    });
+  
+    if (!component) {
+      throw new NotFoundException(`Component with id ${id} not found`);
+    }
+  
+    // Atualiza apenas o campo `updated_at`
+    component.deleted_at = new Date();
+  
+    return await this.userRepository.save(component);
   }
 
   async findByUsername(username: string): Promise<User | undefined> {

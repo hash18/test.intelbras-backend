@@ -2,7 +2,7 @@ import { UserService } from './user.service';
 import { UserController } from './user.controller';
 import { Repository } from 'typeorm';
 import { User } from '../entities/User.entity';
-import { AuthService } from 'src/auth/auth.service';
+import { AuthService } from '../auth/auth.service';
 
 describe('1- UserService', () => {
   let userService: UserService;

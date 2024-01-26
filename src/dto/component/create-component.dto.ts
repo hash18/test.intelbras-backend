@@ -4,11 +4,12 @@ export class CreateComponentDto {
     name: string;
     gtin: string;
     component_code: string;
-    height: string;
-    width: string;
-    depth: string;
-    gross_weight: string;
-    net_weight: string;
+    height: number;
+    width: number;
+    depth: number;
+    gross_weight: number;
+    net_weight: number;
+    tare: number;
     created_at: Date;
     updated_at: Date;
     deleted_at: Date;

@@ -32,19 +32,19 @@ export class Component {
   component_code: string | null;
 
   @Column("varchar", { name: "height", nullable: true, length: 45 })
-  height: string | null;
+  height: number | null;
 
   @Column("varchar", { name: "width", nullable: true, length: 45 })
-  width: string | null;
+  width: number | null;
 
   @Column("varchar", { name: "depth", nullable: true, length: 45 })
-  depth: string | null;
+  depth: number | null;
 
   @Column("varchar", { name: "gross_weight", nullable: true, length: 45 })
-  gross_weight: string | null;
+  gross_weight: number | null;
 
   @Column("varchar", { name: "net_weight", nullable: true, length: 45 })
-  net_weight: string | null;
+  net_weight: number | null;
 
   @Column("timestamp", {
     name: "created_at",
@@ -66,6 +66,9 @@ export class Component {
     default: () => "'1'",
   })
   active: boolean | null;
+
+  @Column({ nullable: true })
+  tare: number | null;
 
   @ManyToOne(
     () => ComponentGroup,
