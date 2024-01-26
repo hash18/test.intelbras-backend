@@ -48,8 +48,13 @@ Criar Componente
 Finalmente, utilize a API de componentes para criar componentes associados aos grupos e tipos de seguimento previamente criados.
 
 Documentação da API
-A documentação da API pode ser acessada em http://localhost:3000/api.(em construção)
+A documentação da API pode ser acessada em http://localhost:3000/api
 
+Teste do sistema
+
+  ```bash
+$ yarn test
+```
 
 ## Installation
 
