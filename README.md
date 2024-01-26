@@ -15,6 +15,9 @@ Configuração do Banco de Dados
 
 Certifique-se de ter um servidor MySQL em execução localmente. O banco de dados será criado automaticamente quando a aplicação for iniciada.
 
+As credenciais do banco de dados podem ser alteradas no arquivo .env
+.env
+
 Rodar a Aplicação
 
 Execute o seguinte comando para iniciar a aplicação:
