@@ -8,11 +8,11 @@ async function bootstrap() {
 
     // Configuração de CORS
     const corsOptions: CorsOptions = {
-      origin: 'http://localhost:3001', // Ou a origem do seu aplicativo React
-      methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
+      origin: 'http://localhost:5000', // Ou a origem do seu aplicativo React
+      methods: 'GET,HEAD,PUT,PATCH,POST,DELETE,OPTIONS',
       allowedHeaders: 'Content-Type,Authorization',
     };
-    app.enableCors(corsOptions);  
+    app.enableCors(corsOptions);
 
   const config = new DocumentBuilder()
     .setTitle('API Intelbras')

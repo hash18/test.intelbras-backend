@@ -29,7 +29,6 @@ export class UserController {
     return await this.userService.create(createUserDto);
   }
 
-  @UseGuards(JwtAuthGuard)
   @Put(':id')
   update(@Param('id') id: string, @Body() updateUserDto: UpdateUserDto) {
     return this.userService.update(+id, updateUserDto);
